@@ -87,7 +87,21 @@ class Countdown extends Component {
                     <button onClick={() => this.adjustTimer("decSeconds")}>&#8681;</button>
                 </div>
 
-                
+                {timerOn === false &&
+                    (timerStart === 0 || timerTime === timerStart) && (
+                        <button onClick={this.startTimer}>Start</button>
+                    )}
+                {timerOn === true && timerTime >= 1000 && (
+                    <button onClick={this.stopTimer}>Stop</button>
+                )}
+                {timerOn === false &&
+                    (timerStart !== 0 && timerStart !== timerTime && timerTime !== 0) && (
+                        <button onClick={this.startTimer}>Resume</button>
+                    )}
+                {(timerOn === false || timerTime < 1000) &&
+                    (timerStart !== timerTime && timerStart > 0) && (
+                        <button onClick={this.resetTimer}>Reset</button>
+                    )}
             </div>
 
         );
