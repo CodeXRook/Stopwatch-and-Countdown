@@ -7,7 +7,7 @@ class App extends Component {
   render () {
     return (
       <div className="App">
-        <div className="App-title"> Timers Demo</div>
+        <div className="App-title"> Beast Mode </div>
         <div className="Timers">
           <Stopwatch />
           <Countdown />
